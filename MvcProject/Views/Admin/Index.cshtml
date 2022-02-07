@@ -1,0 +1,48 @@
+﻿
+@using EntityLayer.Concrete
+@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_masterPage.cshtml";
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Yazarlar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item" ><a href="/Admin/AddCategory/" class="btn btn-sm btn-primary"> Yeni Kategori kayıt</a></li>
+                       
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<table class="Table table-hover table-bordered col-md-12">
+    <tr>
+        <th class="col-md-1">İD</th>
+        <th class="col-md-4">Kategori Adı</th>
+        <th class="col-md-4">Açıklama</th>
+        <th class="col-md-1">Sil</th>
+        <th class="col-md-1">Güncelle</th>
+        <th class="col-md-1">Başlıklar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.CategoryId</th>
+            <td>@item.CategoryName</td>
+            <td>@item.CategoryDescription</td>
+            <td><a href="/Admin/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/EditCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
+        </tr>
+    }
+
+    
+</table>
+<br/>
+<a href="/Admin/AddCategory" class="btn btn-success ">Yeni Kategori</a>
