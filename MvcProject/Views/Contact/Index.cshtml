@@ -29,7 +29,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen</h3>
+                        <h3 class="card-title">İletişim</h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
@@ -82,10 +82,10 @@
                                         <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactID"><i class="fas fa-star text-warning"></i></a></td>
                                         <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactID">@item.UserName</a></td>
                                         <td class="mailbox-subject">
-                                            <b>@item.Subject</b> @item.Message.Substring(0,30)...
+                                            <b>@item.Subject ;</b><br/> @item.Message.Substring(0,30)...
                                         </td>
                                         <td class="mailbox-attachment"></td>
-                                        <td class="mailbox-date">@DateTime.Now.ToString()</td>
+                                        <td class="mailbox-date">@(((DateTime)item.ContactDate).ToString("dd-MM-yyyy"))</td>
                                     </tr>
                                 }
                                

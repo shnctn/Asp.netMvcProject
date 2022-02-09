@@ -17,6 +17,7 @@ namespace MvcProject.Controllers
         MessageValidator messageValidator = new MessageValidator();
 
         // GET: Message
+        [Authorize]
         public ActionResult Inbox()
         {
             var messagevalue = mm.GetListInbox();

@@ -11,6 +11,9 @@ namespace MvcProject.Controllers
     public class ContactController : Controller
     {
         private ContactManger cm = new ContactManger(new EfContactDal());
+
+        private MessageManager mm = new MessageManager(new EfMessageDal());
+
         // GET: Contact
         public ActionResult Index()
         {
@@ -27,7 +30,8 @@ namespace MvcProject.Controllers
 
         public PartialViewResult MessageListMenu()
         {
-            return PartialView();
+            var values= mm.GetList();
+            return PartialView(values);
         }
     }
 }

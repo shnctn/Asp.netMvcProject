@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
+using DataAccess.Concrete.Repositories;
 using EntityLayer.Concrete;
 
-namespace DataAccess.Concrete.Repositories
+namespace DataAccess.EntityFramework
 {
-     public class Categoryrepository
+   public  class EfImageDal: GenericRepository<ImageFile>, IImageFileDal
     {
     }
 }

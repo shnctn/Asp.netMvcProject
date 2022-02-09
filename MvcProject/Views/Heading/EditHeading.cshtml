@@ -19,7 +19,7 @@
     @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })
     <br />
     @Html.Label("Yazar")
-    @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Writer.WriterName, new { @class = "form-control" })
     <br />
     @Html.Label("Kategori")
     @Html.DropDownListFor(x => x.Category.CategoryName, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })

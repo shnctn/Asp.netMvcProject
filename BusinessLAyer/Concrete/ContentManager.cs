@@ -28,6 +28,11 @@ namespace BusinessLayer.Concrete
             return _contentDal.List(x => x.ContentId == id);
         }
 
+        public List<Content> GetListByWriterID(int id)
+        {
+            return _contentDal.List(x => x.WriterId == id );
+        }
+
         public void ContentAdd(Content c)
         {
             _contentDal.insert(c);

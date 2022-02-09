@@ -32,11 +32,11 @@
                 <table class="table table-hover text-nowrap">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>User</th>
-                            <th>Image</th>
-                            <th>Status</th>
-                            <th>Reason</th>
+                            <th>Numarası</th>
+                            <th>hakkında Yazıların Başlıkları</th>
+                            <th>hakkında Yazıların Başlıkları 2</th>
+                            <th>Görsel 1</th>
+                            <th>Görsel 2</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,10 +44,12 @@
                     {
                         <tr>
                             <td>@item.AboutId</td>
-                            <td>@item.AboutDetails1</td>
-                            <td>@item.AboutImage1</td>
-                            <td><a href="#" class="btn btn-sm btn-primary">Aktif Yap</a></td>
-                            <td><button class="btn btn-success"></button></td>
+                            <td>@item.AboutDetails1.Substring(0,30)...</td>
+                           
+                            <td>@item.AboutDetails2.Substring(0,30)...</td>
+                            <td><img alt="Avatar" class="table-avatar" src="@item.AboutImage1" /> </td>
+                            <td><img alt="Avatar" class="table-avatar" src="@item.AboutImage2" /></td>
+                            
                         </tr>
                     }
                    

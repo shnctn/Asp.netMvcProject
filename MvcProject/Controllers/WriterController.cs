@@ -18,7 +18,7 @@ namespace MvcProject.Controllers
         WriterValidatior writerValidatior = new WriterValidatior();
         public ActionResult Index()
         {
-            var Writervalues = wm.getList();
+            var Writervalues = wm.GetList();
 
             return View(Writervalues);
         }

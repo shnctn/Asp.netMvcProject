@@ -32,7 +32,7 @@ namespace MvcProject.Controllers
                     Text = x.CategoryName,
                     Value = x.CategoryId.ToString()
                 }).ToList();
-            List<SelectListItem> valueWriter = (from x in wm.getList()
+            List<SelectListItem> valueWriter = (from x in wm.GetList()
                 select new SelectListItem
                 {
                     Text = x.WriterName + " " + x.Surname,

@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
              _writerDal = writerDal;
          }
 
-         public List<Writer> getList()
+         public List<Writer> GetList()
          {
            return  _writerDal.List();
          }

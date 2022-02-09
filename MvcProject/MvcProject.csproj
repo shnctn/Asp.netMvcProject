@@ -143,13 +143,18 @@
     <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContentController.cs" />
+    <Compile Include="Controllers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -168,6 +173,7 @@
     <Content Include="dist\css\alt\adminlte.pages.min.css" />
     <Content Include="dist\css\alt\adminlte.plugins.css" />
     <Content Include="dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="dist\css\style.css" />
     <Content Include="dist\img\2.png" />
     <Content Include="dist\img\4.png" />
     <Content Include="dist\img\AdminLTELogo.png" />
@@ -176,6 +182,7 @@
     <Content Include="dist\img\avatar2.png" />
     <Content Include="dist\img\avatar3.png" />
     <Content Include="dist\img\avatar5.png" />
+    <Content Include="dist\img\bg.jpg" />
     <Content Include="dist\img\boxed-bg.jpg" />
     <Content Include="dist\img\boxed-bg.png" />
     <Content Include="dist\img\credit\american-express.png" />
@@ -206,10 +213,14 @@
     <Content Include="dist\img\user8-128x128.jpg" />
     <Content Include="dist\js\adminlte.js" />
     <Content Include="dist\js\adminlte.min.js" />
+    <Content Include="dist\js\bootstrap.min.js" />
     <Content Include="dist\js\demo.js" />
+    <Content Include="dist\js\jquery.min.js" />
+    <Content Include="dist\js\main.js" />
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
+    <Content Include="dist\js\popper.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1980,6 +1991,20 @@
     <Content Include="Views\Message\GetSendboxDetails.cshtml" />
     <Content Include="Views\Eror\Page404.cshtml" />
     <Content Include="Views\Galeri\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
+    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
+    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\MessageListMenu.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Sendbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetInboxDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetSendboxDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\NewMessage.cshtml" />
+    <Content Include="Views\WriterPanelContent\MyContent.cshtml" />
+    <Content Include="Views\Login\WriterLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

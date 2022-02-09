@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
        public List<Message> GetListInbox()
        {
-           return _messageDal.List(x=>x.ReceiverMail=="admin@gmail.com");
+           return _messageDal.List(x=>x.ReceiverMail=="shnctn@hotmail.com");
        }
 
         public List<Message> GetListSendbox()
@@ -28,7 +28,12 @@ namespace BusinessLayer.Concrete
           return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
         }
 
-       public void MessageAdd(Message c)
+        public List<Message> GetList()
+        {
+            return _messageDal.List();
+        }
+
+        public void MessageAdd(Message c)
        {
           _messageDal.insert(c);
        }

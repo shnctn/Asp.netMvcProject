@@ -1,0 +1,74 @@
+﻿@using EntityLayer.Concrete
+@model List<EntityLayer.Content>
+@{
+    ViewBag.Title = "MyContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Profile</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">@ViewBag.d</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- /.col -->
+            <div class="col-md-12">
+
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="timeline">
+                    <!-- The timeline -->
+                    <div class="timeline timeline-inverse">
+                        <!-- timeline time label -->
+                        @foreach (var item in Model)
+                        {
+                            <div class="time-label">
+                                <span class="bg-danger">
+                                    @(((DateTime)item.ContentDate).ToString("dd-MM-yyyy"))
+                                </span>
+                            </div>
+                            <div>
+                                <i class="fas fa-comments bg-warning"></i>
+
+                                <div class="timeline-item">
+                                    
+
+                                    <h3 class="timeline-header"><a href="#">@item.Writer.WriterName @item.Writer.Surname</a> </h3>
+                                    <div class="timeline-body">
+                                        @item.ContentValue
+                                    </div>
+                                    <div class="timeline-footer">
+                                        <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END timeline item -->
+                        }
+                        <!-- timeline time label -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+</section>
+
