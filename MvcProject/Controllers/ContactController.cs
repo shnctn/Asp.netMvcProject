@@ -8,6 +8,7 @@ using DataAccess.EntityFramework;
 
 namespace MvcProject.Controllers
 {
+    
     public class ContactController : Controller
     {
         private ContactManger cm = new ContactManger(new EfContactDal());

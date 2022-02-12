@@ -1,4 +1,4 @@
-﻿using EntityLayer;
+﻿using EntityLayer.Concrete;
 
 namespace DataAccess.Abstract
 {

@@ -18,15 +18,15 @@ namespace MvcProject.Controllers
 
         // GET: Message
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string s)
         {
-            var messagevalue = mm.GetListInbox();
+            var messagevalue = mm.GetListInbox(s);
             return View(messagevalue);
         }
 
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string s)
         {
-            var messagevalue = mm.GetListSendbox();
+            var messagevalue = mm.GetListSendbox(s);
             return View(messagevalue);
         }
         [HttpGet]

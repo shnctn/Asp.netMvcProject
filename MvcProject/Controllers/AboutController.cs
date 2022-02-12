@@ -9,9 +9,10 @@ using DataAccess.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace MvcProject.Controllers
-{
+{  
     public class AboutController : Controller
     {
+      
         private AboutManager abm = new AboutManager(new EfAboutDal());
         // GET: About
         public ActionResult Index()

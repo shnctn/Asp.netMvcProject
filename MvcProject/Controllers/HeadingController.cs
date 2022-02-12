@@ -9,6 +9,7 @@ using EntityLayer.Concrete;
 
 namespace MvcProject.Controllers
 {
+   
     public class HeadingController : Controller
     {
         // GET: Heading
@@ -21,6 +22,11 @@ namespace MvcProject.Controllers
             return View(hmvalues);
         }
 
+        public ActionResult Report()
+        {
+            var hmvalues = hm.GetList();
+            return View(hmvalues);
+        }
 
 
         [HttpGet]
@@ -71,7 +77,7 @@ namespace MvcProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult deleteHeading(int id)
+        public ActionResult DeleteHeading(int id)
         {
             var headingValue = hm.GetById(id);
             headingValue.HeadingStatus = false;

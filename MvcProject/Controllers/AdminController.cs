@@ -16,9 +16,10 @@ namespace MvcProject.Controllers
         // GET: Admin
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
-        [Authorize(Roles = "B")]
+      //  [Authorize(Roles = "A")]
         public ActionResult Index()
-        {
+        {   
+            ViewBag.d= (string)Session["WriterMail"];
             var categoryValues = cm.GetList();
             return View(categoryValues);
         }

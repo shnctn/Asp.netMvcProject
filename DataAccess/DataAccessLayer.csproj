@@ -96,9 +96,13 @@
     <Compile Include="Migrations\202202071336533_mig_AdminClass.designer.cs">
       <DependentUpon>202202071336533_mig_AdminClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202090731252_migContentName.cs" />
-    <Compile Include="Migrations\202202090731252_migContentName.designer.cs">
-      <DependentUpon>202202090731252_migContentName.cs</DependentUpon>
+    <Compile Include="Migrations\202202091129203_Mig_DataBase_errors.cs" />
+    <Compile Include="Migrations\202202091129203_Mig_DataBase_errors.designer.cs">
+      <DependentUpon>202202091129203_Mig_DataBase_errors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202120831099_Mig_ContentHeadingID.cs" />
+    <Compile Include="Migrations\202202120831099_Mig_ContentHeadingID.designer.cs">
+      <DependentUpon>202202120831099_Mig_ContentHeadingID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +136,11 @@
     <EmbeddedResource Include="Migrations\202202071336533_mig_AdminClass.resx">
       <DependentUpon>202202071336533_mig_AdminClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202090731252_migContentName.resx">
-      <DependentUpon>202202090731252_migContentName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202091129203_Mig_DataBase_errors.resx">
+      <DependentUpon>202202091129203_Mig_DataBase_errors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202120831099_Mig_ContentHeadingID.resx">
+      <DependentUpon>202202120831099_Mig_ContentHeadingID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

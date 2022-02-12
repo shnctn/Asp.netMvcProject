@@ -13,10 +13,10 @@ namespace MvcProject.Controllers
 {   [AllowAnonymous]
     public class LoginController : Controller
     {
-        private AdminManager adm = new AdminManager(new EfAdminDal());
-
-        private WriterManager wm = new WriterManager(new EfWriterDal());
-        // GET: Login
+        //private AdminManager adm = new AdminManager(new EfAdminDal());
+        private WriterLoginManager wlm = new WriterLoginManager(new EfWriterDal());
+        //private WriterManager wm = new WriterManager(new EfWriterDal());
+        //// GET: Login
         [HttpGet]
         public ActionResult Index()
         {
@@ -31,7 +31,7 @@ namespace MvcProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(adminuser.UserName,false);
                 Session["UserName"] = adminuser.UserName;
-                return RedirectToAction("WriterProfile", "WriterPanel");
+                return RedirectToAction("Index", "Admin");
             }
             else
             {
@@ -48,8 +48,9 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer w)
         {
-            Context c = new Context();
-            var writeruser = c.Writers.FirstOrDefault(x => x.WriterMail == w.WriterMail && x.writerPassword == w.writerPassword);
+            //Context c = new Context();
+            //var writeruser = c.Writers.FirstOrDefault(x => x.WriterMail == w.WriterMail && x.WriterPassword == w.WriterPassword);
+            var writeruser = wlm.GetWriter(w.WriterMail, w.WriterPassword);
             if (writeruser != null)
             {
                 FormsAuthentication.SetAuthCookie(writeruser.WriterMail, false);
@@ -60,6 +61,14 @@ namespace MvcProject.Controllers
             {
                 return RedirectToAction("Index");
             }
+
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Heading", "Default");
 
         }
     }

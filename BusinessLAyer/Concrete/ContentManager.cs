@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
 using DataAccess.Abstract;
-using EntityLayer;
+using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
@@ -21,6 +21,11 @@ namespace BusinessLayer.Concrete
         public List<Content> GetList()
         {
            return _contentDal.List();
+        }
+
+        public List<Content> GetList(string p)
+        {
+            return _contentDal.List(x => x.ContentValue.Contains(p));
         }
 
         public List<Content> GetListByHeadingID(int id)

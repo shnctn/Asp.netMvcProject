@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    
 
 </head>
 <!--
@@ -39,7 +40,7 @@ to get the desired effect
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="~/index3.html" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="~/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -59,19 +60,19 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        @*@if (User.IsInRole("B"))///   Fole atmalarında  hangi rolun güneceği alan
-                        {*@
-                            <li class="nav-item has-treeview menu-open">
-                                <a href="/Admin/Index/" class="nav-link">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Kategoriler
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
+    with font-awesome or any other icon font library -->
+                        @*@if (User.IsInRole("B"))///   Rol atmalarında  hangi rolun güneceği alan
+        {*@
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="/Admin/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Kategoriler
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
 
-                            </li>
+                        </li>
                         @*}*@
                         <li class="nav-item">
                             <a href="/Heading/Index/" class="nav-link">
@@ -80,6 +81,15 @@ to get the desired effect
                                     Başlıklar
                                 </p>
                             </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Content/GetAllContent/" class="nav-link">
+                                <i class="nav-icon fas fa-angry"></i>
+                                <p>
+                                    Yazılar
+                                </p>
+                            </a>
+
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="/Writer/Index/" class="nav-link">
@@ -100,7 +110,7 @@ to get the desired effect
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="/Chart/Index/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 1</p>
                                     </a>
@@ -130,6 +140,16 @@ to get the desired effect
 
                         </li>
                         <li class="nav-item has-treeview">
+                            <a href="/Heading/Report/" class="nav-link">
+                                <i class="nav-icon fas fa-bars"></i>
+                                <p>
+                                    Raporlar
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
                             <a href="/Contact/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
@@ -139,9 +159,9 @@ to get the desired effect
                             </a>
 
                         </li>
-                       
+
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Yetkilendirmeler
@@ -167,7 +187,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Default/Heading/" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Siteye Git
@@ -177,10 +197,20 @@ to get the desired effect
 
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Test/Test3/" class="nav-link">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>
+                                  Sweet Alert
+
+                                </p>
+                            </a>
+
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Login/LogOut/" class="nav-link">
                                 <i class="nav-icon far fa-plus-square"></i>
                                 <p>
-                                    Çıkış YAP
+                                    Çıkış Yap
 
                                 </p>
                             </a>

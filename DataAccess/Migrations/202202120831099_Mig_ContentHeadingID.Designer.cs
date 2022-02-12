@@ -7,18 +7,18 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class migContentName : IMigrationMetadata
+    public sealed partial class Mig_ContentHeadingID : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(migContentName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mig_ContentHeadingID));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202090731252_migContentName"; }
+            get { return "202202120831099_Mig_ContentHeadingID"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

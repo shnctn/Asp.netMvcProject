@@ -8,6 +8,7 @@ using DataAccess.EntityFramework;
 
 namespace MvcProject.Controllers
 {
+   
     public class GaleriController : Controller
     {
         private ImageFileManager im = new ImageFileManager(new EfImageDal());

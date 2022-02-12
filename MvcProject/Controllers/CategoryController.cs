@@ -13,6 +13,7 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace MvcProject.Content
 {
+    
     public class CategoryController : Controller
     {
         // GET: Category

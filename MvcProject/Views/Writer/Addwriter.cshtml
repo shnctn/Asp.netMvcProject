@@ -26,8 +26,8 @@
     @Html.ValidationMessageFor(x => x.WriterMail)
     <br />
     @Html.Label("Yazar Şifre")
-    @Html.TextBoxFor(x => x.writerPassword, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.writerPassword)
+    @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterPassword)
     <br />
     @Html.Label("Yazar görsel Linki")
     @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
@@ -38,8 +38,8 @@
     @Html.ValidationMessageFor(x => x.WriterTitle)
     <br />
     @Html.Label("Yazar hakkında")
-    @Html.TextAreaFor(x => x.writerAbout ,new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.writerAbout)
+    @Html.TextAreaFor(x => x.WriterAbout ,new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterAbout)
     <br />
     <button class="btn btn-dark"> Yazarı Kaydet</button>
 

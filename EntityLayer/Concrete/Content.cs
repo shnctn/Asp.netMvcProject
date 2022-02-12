@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLayer.Concrete;
 
-namespace EntityLayer
+namespace EntityLayer.Concrete
 {
     public class Content
     { [Key]
@@ -16,6 +16,8 @@ namespace EntityLayer
         public int WriterId { get; set; }
         public virtual Writer Writer { get; set; }
         public bool ContentStatus { get; set; }
+        public int? HeadingId { get; set; }
+        public virtual Heading Heading { get; set; }
     
        
     }

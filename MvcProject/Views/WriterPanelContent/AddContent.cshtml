@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "AddContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Yeni Yazı Ekleme</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#" class="btn btn-primary">Yeni Yazı Yazıyor</a></li>
+                    @*<li class="breadcrumb-item active">@ViewBag.vlr</li>*@
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+@using (Html.BeginForm("AddContent", "WriterPanelContent", FormMethod.Post))
+{
+<div class="form-group">
+    @*@Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.HeadingId, (List<SelectListItem>)ViewBag.vlh,  new { @class = "form-control" })
+    
+  <br />*@
+    @Html.Label("İçerik Yazın")
+    @Html.TextAreaFor(x => x.ContentValue, 15, 30, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ContentValue)
+
+    <br />
+    <button class="btn btn-dark">Kaydet</button>
+
+</div>
+}

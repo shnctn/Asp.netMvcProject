@@ -5,9 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProject.Controllers
 {
@@ -15,14 +19,40 @@ namespace MvcProject.Controllers
     {
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
         private HeadingManager hm = new HeadingManager(new EfHeadingDal());
+        WriterValidatior writerValidatior = new WriterValidatior();
+        private WriterManager wm = new WriterManager(new EfWriterDal());
         Context c = new Context();
 
         // GET: WriterPanel
-        public ActionResult WriterProfile()
+        [HttpGet]
+        public ActionResult WriterProfile(int id=0)
         {
+            string p = (string)Session["WriterMail"];
+            ViewBag.d = p;
+            id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterId).FirstOrDefault();
+            var writervalue = wm.GetById(id);
+            return View(writervalue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer r)
+        {
+            ValidationResult result = writerValidatior.Validate(r);
+            if (result.IsValid)
+            {
+                wm.WriterUpdate(r);
+                return RedirectToAction("AllHeading","WriterPanel");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
             return View();
         }
-       
         public ActionResult MyHeading(string p)
         {
            
@@ -34,7 +64,6 @@ namespace MvcProject.Controllers
         [HttpGet]
         public ActionResult NewHeading()
         {
-         
             List<SelectListItem> valueCategory = (from x in cm.GetList()
                 select new SelectListItem
                 {
@@ -76,7 +105,7 @@ namespace MvcProject.Controllers
             return RedirectToAction("MyHeading");
         }
 
-        public ActionResult deleteHeading(int id)
+        public ActionResult DeleteHeading(int id)
         {
             var headingValue = hm.GetById(id);
             headingValue.HeadingStatus = false;
@@ -84,5 +113,13 @@ namespace MvcProject.Controllers
             return RedirectToAction("MyHeading");
 
         }
+
+        public ActionResult AllHeading(int p=1)
+        {
+            var headings = hm.GetList().ToPagedList(p, 6);
+            return View(headings);
+        }
+
+      
     }
 }
